@@ -1,13 +1,28 @@
+var linearPoint = require('../linearPoint');
 var assert = require('assert'); //link in assertion library
-describe('Tests for function one', () => {
-    describe('Test Case 1 #fnOne()',() => {
-        it('should return -1 when the value is not present', () => {
-            assert.equal([1,2,3].indexOf(4), -1);
+describe('Test for mcx function #linearPoint()', () =>
+{
+    describe('Test case 1', () =>
+    {
+        it('m*x + c should equal m + c when x = 1', () =>
+        {
+            assert.equal(linearPoint(2, 1, 4), 6);
         });
     });
-    describe('Test Case #fnOne()', () => {
-        it('should return 3 as the value is present', () => {
-            assert.equal([1,2,3,4,5].indexOf(4), 3);
+
+    describe('Test case 2', () =>
+    {
+        it('m*x + c should equal c when x = 0', () =>
+        {
+            assert.equal(linearPoint(2, 0, 4), 4);
+        });
+    });
+
+    describe('Test case 1', () =>
+    {
+        it('m*x + c should equal c - m when x = -1', () =>
+        {
+            assert.equal(linearPoint(2, -1, 4), 2);
         });
     });
 });
